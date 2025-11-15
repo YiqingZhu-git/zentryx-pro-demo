@@ -253,7 +253,7 @@
         </div>
       </section>
 
-            <!-- Research Report Section -->
+      <!-- Research Report Section -->
       <section class="research-report-section glass-card p-8 rounded-3xl mb-8">
         <div class="research-report-grid">
           <!-- Left Column: Report Info -->
@@ -2134,6 +2134,22 @@
             "Fear": "恐惧",
             "Extreme Greed": "极度贪婪",
             "Extreme Fear": "极度恐惧",
+
+            // Research Report
+            "New Research": "新研究",
+            "Cryptocurrency Investment Strategy Research Report": "高风险产品投资策略研究报告",
+            "Comprehensive 50-page analysis covering market trends, portfolio optimization, risk management, and strategic recommendations for cryptocurrency investment.": "全面的50页分析报告，涵盖市场趋势、投资组合优化、风险管理以及加密货币投资的战略建议。",
+            "Report Highlights": "报告亮点",
+            "15+ Investment Strategies Analyzed": "15+ 投资策略分析",
+            "Market Sentiment Analysis": "市场情绪分析",
+            "Risk Management Framework": "风险管理框架",
+            "Portfolio Optimization Models": "投资组合优化模型",
+            "Download Report (PDF)": "下载报告 (PDF)",
+            "View Online": "在线查看",
+            "Pages": "页",
+            "Strategies": "策略",
+            "Avg. Return": "平均回报",
+            "Latest": "最新",
 
             // Smart Assistant
             "Smart assistant": "智能助手",
@@ -6044,9 +6060,72 @@ Format the response in HTML with proper headings and bullet points.`;
           }).format(price)}`;
         }
 
+        // --- PDF MODAL ---
+        function setupPDFModal() {
+          const viewReportBtn = document.getElementById('viewReportBtn');
+          const pdfModal = document.getElementById('pdfModal');
+          const closePdfModal = document.getElementById('closePdfModal');
+          const pdfViewer = document.getElementById('pdfViewer');
+
+          if (viewReportBtn) {
+            viewReportBtn.addEventListener('click', () => {
+              // Set the PDF source (use Google Docs Viewer for better compatibility)
+              pdfViewer.src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(window.location.origin + '/report.pdf') + '&embedded=true';
+              pdfModal.classList.add('active');
+              document.body.style.overflow = 'hidden';
+            });
+          }
+
+          if (closePdfModal) {
+            closePdfModal.addEventListener('click', () => {
+              pdfModal.classList.remove('active');
+              pdfViewer.src = '';
+              document.body.style.overflow = 'auto';
+            });
+          }
+
+          // Close modal when clicking outside
+          if (pdfModal) {
+            pdfModal.addEventListener('click', (e) => {
+              if (e.target === pdfModal) {
+                pdfModal.classList.remove('active');
+                pdfViewer.src = '';
+                document.body.style.overflow = 'auto';
+              }
+            });
+          }
+
+          // Close modal with Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && pdfModal.classList.contains('active')) {
+              pdfModal.classList.remove('active');
+              pdfViewer.src = '';
+              document.body.style.overflow = 'auto';
+            }
+          });
+        }
+
         // --- START THE APP ---
         init();
+        setupPDFModal();
       });
     </script>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdfModal" class="pdf-modal">
+      <div class="pdf-modal-content">
+        <div class="pdf-modal-header">
+          <h3 data-translate="Cryptocurrency Investment Strategy Research Report">加密货币投资策略研究报告</h3>
+          <button class="pdf-modal-close" id="closePdfModal">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="pdf-modal-body">
+          <iframe id="pdfViewer" src="" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
