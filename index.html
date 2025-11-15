@@ -45,39 +45,39 @@
       <header class="top-bar glass-panel mb-6 flex-shrink-0" role="banner">
         <div class="top-bar__left">
           <div class="brand-mark">
-            <svg
-              class="w-10 h-10 text-accent-blue"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 2L2 7V17L12 22L22 17V7L12 2Z"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2 7L12 12L22 7"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M12 12V22"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+          <svg
+            class="w-10 h-10 text-accent-blue"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 2L2 7V17L12 22L22 17V7L12 2Z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 7L12 12L22 7"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M12 12V22"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
             <div>
               <p class="text-xs uppercase tracking-[0.3em] text-secondary">Zentryx Pro</p>
               <h1 class="text-2xl font-bold leading-tight">Digital Portfolio Terminal</h1>
-            </div>
+        </div>
           </div>
         </div>
         <nav class="top-bar__nav" aria-label="Primary navigation">
@@ -95,14 +95,14 @@
             </div>
           </div>
           <div class="top-bar__controls">
-            <button
+          <button
             id="language-toggle"
             aria-label="Toggle language"
               class="icon-btn"
             title="Toggle language"
             >
               <span id="language-text" class="text-sm font-semibold">English</span>
-            </button>
+          </button>
             <button
               id="theme-toggle"
               aria-label="Toggle theme"
@@ -308,54 +308,87 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex flex-wrap gap-3">
-              <a href="report.pdf" download class="btn-primary flex items-center gap-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                </svg>
-                <span data-translate="Check the Report (PDF)">查看报告 (PDF)</span>
-              </a>
+            <div class="flex flex-col gap-4">
+              <div class="flex flex-wrap gap-3">
+                <a href="report.pdf" download class="btn-primary flex items-center gap-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                  <span data-translate="Check the Report (PDF)">查看报告 (PDF)</span>
+                </a>
+              </div>
+
+              <div class="report-metrics">
+                <div class="report-metric-card">
+                  <div class="metric-value">40+</div>
+                  <p class="metric-label">页</p>
+                </div>
+                <div class="report-metric-card">
+                  <div class="metric-value">6+</div>
+                  <p class="metric-label">策略</p>
+                </div>
+                <div class="report-metric-card">
+                  <div class="metric-value">12.8%</div>
+                  <p class="metric-label">平均回报</p>
+                </div>
+                <div class="report-metric-card">
+                  <div class="metric-value">2025</div>
+                  <p class="metric-label">最新</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Right Column: Report Stats -->
-          <div class="research-stats">
-            <div class="stat-card">
-              <div class="stat-icon" style="background: linear-gradient(135deg, rgba(56, 139, 253, 0.15), rgba(56, 139, 253, 0.05));">
-                <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                </svg>
-              </div>
-              <div class="stat-value">40+</div>
-              <div class="stat-label" data-translate="Pages">页</div>
+          <div class="research-report-side">
+            <h3 class="text-lg font-semibold mb-3">项目报告 Project Report</h3>
+            <section id="docViewer" class="doc-viewer glass-card">
+              <iframe
+                src="report.pdf#toolbar=0&navpanes=0"
+                width="100%"
+                height="520"
+                style="border: none; border-radius: 12px;"
+                loading="lazy"
+              ></iframe>
+            </section>
+          </div>
+        </div>
+
+        <div class="research-stats metrics-row">
+          <div class="stat-card">
+            <div class="stat-icon" style="background: linear-gradient(135deg, rgba(56, 139, 253, 0.15), rgba(56, 139, 253, 0.05));">
+              <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+              </svg>
             </div>
-            <div class="stat-card">
-              <div class="stat-icon" style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(167, 139, 250, 0.05));">
-                <svg class="w-6 h-6 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                </svg>
-              </div>
-              <div class="stat-value">6+</div>
-              <div class="stat-label" data-translate="Strategies">策略</div>
+            <div class="stat-value">40+</div>
+            <div class="stat-label" data-translate="Pages">页</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(167, 139, 250, 0.05));">
+              <svg class="w-6 h-6 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
             </div>
-            <div class="stat-card">
-              <div class="stat-icon" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05));">
-                <svg class="w-6 h-6 text-gain" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                </svg>
-              </div>
-              <div class="stat-value">12.8%</div>
-              <div class="stat-label" data-translate="Avg. Return">平均回报</div>
+            <div class="stat-value">6+</div>
+            <div class="stat-label" data-translate="Strategies">策略</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05));">
+              <svg class="w-6 h-6 text-gain" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </svg>
             </div>
-            <div class="stat-card">
-              <div class="stat-icon" style="background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 191, 36, 0.05));">
-                <svg class="w-6 h-6" style="color: #fbbf24;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-              <div class="stat-value">2025</div>
-              <div class="stat-label" data-translate="Latest">最新</div>
+            <div class="stat-value">12.8%</div>
+            <div class="stat-label" data-translate="Avg. Return">平均回报</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 191, 36, 0.05));">
+              <svg class="w-6 h-6" style="color: #fbbf24;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
             </div>
+            <div class="stat-value">2025</div>
+            <div class="stat-label" data-translate="Latest">最新</div>
           </div>
         </div>
       </section>
@@ -604,7 +637,7 @@
               <div>
                 <p class="text-xs uppercase tracking-[0.3em] text-secondary" data-translate="Market context">Market context</p>
                 <h2 class="text-lg font-semibold" data-translate="Market Sentiment">Market Sentiment</h2>
-              </div>
+            </div>
               <span class="sentiment-badge" id="sentimentBadge" data-translate="Greed">Greed</span>
             </div>
             <div class="sentiment-gauge" role="img" aria-label="Market sentiment gauge">
@@ -702,26 +735,26 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                 </svg>
                 <span class="text-xs" data-translate="Rebalance">Rebalance</span>
-              </button>
+                  </button>
               <button class="quick-action-btn">
                 <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                 </svg>
                 <span class="text-xs" data-translate="Analytics">Analytics</span>
-              </button>
+                  </button>
               <button class="quick-action-btn">
                 <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
                 <span class="text-xs" data-translate="Export">Export</span>
-              </button>
+                  </button>
               <button class="quick-action-btn">
                 <svg class="w-5 h-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                 </svg>
                 <span class="text-xs" data-translate="Alerts">Alerts</span>
               </button>
-            </div>
+              </div>
           </div>
 
           <!-- New: Risk Metrics -->
@@ -782,39 +815,39 @@
           </div>
           <div id="advanced-analytics-content" class="analytics-grid">
             <div class="analytics-card glass-card rounded-2xl p-5" id="quadrantChartCard">
-              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center justify-between mb-4">
                 <h3 class="text-lg font-semibold" data-translate="Risk / Return Quadrant">Risk / Return Quadrant</h3>
                 <button class="icon-btn" id="openComparisonGalleryBtn" aria-label="Open strategy gallery">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h8M4 10h8M4 14h4"></path>
-                  </svg>
-                </button>
-              </div>
+                    </svg>
+                  </button>
+                </div>
               <canvas
                 id="quadrantChart"
                 aria-label="Quadrant chart comparing strategy risk and return"
                 role="img"
                 height="220"
               ></canvas>
-            </div>
+                  </div>
             <div class="analytics-card glass-card rounded-2xl p-5">
               <h3 class="text-lg font-semibold mb-4" data-translate="Portfolio vs Benchmark">Portfolio vs Benchmark</h3>
               <canvas id="portfolioVsBenchmarkChart" height="220"></canvas>
-            </div>
+                </div>
             <div class="analytics-card glass-card rounded-2xl p-5">
               <h3 class="text-lg font-semibold mb-4" data-translate="Strategy Risk Buckets">Strategy Risk Buckets</h3>
               <div id="strategyRiskDistribution" class="space-y-3"></div>
-            </div>
+                  </div>
 
             <!-- New: Asset Correlation Heatmap -->
             <div class="analytics-card glass-card rounded-2xl p-5">
               <div class="flex items-center justify-between mb-4">
                 <h3 class="text-lg font-semibold" data-translate="Asset Correlation Matrix">Asset Correlation</h3>
                 <span class="text-xs text-secondary" data-translate="Rolling 30-day">Rolling 30-day</span>
-              </div>
+                </div>
               <div id="correlationMatrix" class="overflow-x-auto"></div>
-            </div>
+              </div>
 
             <!-- New: Maximum Drawdown Analysis -->
             <div class="analytics-card glass-card rounded-2xl p-5">
@@ -824,7 +857,7 @@
               </div>
               <canvas id="drawdownChart" height="220"></canvas>
             </div>
-
+            
             <!-- New: Rolling Sharpe Ratio -->
             <div class="analytics-card glass-card rounded-2xl p-5">
               <div class="flex items-center justify-between mb-4">
@@ -2210,7 +2243,7 @@
           // Update charts with translated labels
           createAllocationDonutChart();
           createStrategyPerformanceChart();
-
+          
           // Update strategy introduction if modal is open
           const strategyModal = document.getElementById("strategyDetailModal");
           if (strategyModal && !strategyModal.classList.contains("hidden")) {
@@ -2457,18 +2490,18 @@
               return `
             <div class="holding-row p-3 rounded-2xl">
               <div class="holding-meta">
-                <div class="asset-icon-shell">
-                  <img src="${asset.imageUrl}" onerror="this.onerror=null;this.src='https://placehold.co/40x40/161b22/c9d1d9?text=${asset.symbol.substring(
-                    0,
-                    2
-                  )}';" class="asset-icon w-10 h-10 rounded-full" alt="${asset.symbol} logo">
-                </div>
-                <div>
-                  <div class="font-semibold">${asset.symbol}</div>
-                  <div class="text-xs text-secondary">${asset.name}</div>
+                    <div class="asset-icon-shell">
+                        <img src="${asset.imageUrl}" onerror="this.onerror=null;this.src='https://placehold.co/40x40/161b22/c9d1d9?text=${asset.symbol.substring(
+                0,
+                2
+              )}';" class="asset-icon w-10 h-10 rounded-full" alt="${asset.symbol} logo">
+                    </div>
+                    <div>
+                        <div class="font-semibold">${asset.symbol}</div>
+                        <div class="text-xs text-secondary">${asset.name}</div>
                   <p class="holding-last-price">Last price · ${formatPrice(asset.price)}</p>
+                    </div>
                 </div>
-              </div>
               <div class="holding-stats">
                 <div>
                   <p class="holding-stat-label">Market value</p>
@@ -2481,11 +2514,11 @@
                 <div>
                   <p class="holding-stat-label">24h</p>
                   <p class="holding-stat-value ${changeColorClass}">${
-                    isPositive ? "+" : ""
+                isPositive ? "+" : ""
                   }${(asset.change || 0).toFixed(2)}%</p>
                 </div>
                 <canvas class="holding-sparkline" data-symbol="${asset.symbol}" width="140" height="34"></canvas>
-              </div>
+            </div>
             </div>`;
             })
             .join("");
@@ -2563,12 +2596,12 @@
 
           const tracePath = (limitX, shouldFill = false) => {
             const safeLimit = Math.max(0, Math.min(limitX, width));
-            ctx.beginPath();
+          ctx.beginPath();
             let prevX = 0;
             let prevY = valueToY(points[0]);
             ctx.moveTo(prevX, prevY);
             for (let idx = 1; idx < points.length; idx++) {
-              const x = idx * step;
+            const x = idx * step;
               const y = valueToY(points[idx]);
               if (x >= safeLimit) {
                 const prevPointX = (idx - 1) * step;
@@ -2581,8 +2614,8 @@
                 prevX = safeLimit;
                 prevY = interpolatedY;
                 break;
-              } else {
-                ctx.lineTo(x, y);
+            } else {
+              ctx.lineTo(x, y);
                 prevX = x;
                 prevY = y;
               }
@@ -2606,14 +2639,14 @@
             tracePath(limitX, false);
             ctx.strokeStyle = strokeColor;
             ctx.lineWidth = 1.5;
-            ctx.lineJoin = "round";
+          ctx.lineJoin = "round";
             ctx.lineCap = "round";
-            ctx.stroke();
+          ctx.stroke();
 
             tracePath(limitX, true);
             ctx.globalAlpha = 0.18;
-            ctx.fillStyle = gradient;
-            ctx.fill();
+          ctx.fillStyle = gradient;
+          ctx.fill();
             ctx.globalAlpha = 1;
 
             if (progress < 1) {
@@ -6060,72 +6093,17 @@ Format the response in HTML with proper headings and bullet points.`;
           }).format(price)}`;
         }
 
-        // --- PDF MODAL ---
-        function setupPDFModal() {
-          const viewReportBtn = document.getElementById('viewReportBtn');
-          const pdfModal = document.getElementById('pdfModal');
-          const closePdfModal = document.getElementById('closePdfModal');
-          const pdfViewer = document.getElementById('pdfViewer');
-
-          if (viewReportBtn) {
-            viewReportBtn.addEventListener('click', () => {
-              // Set the PDF source (use Google Docs Viewer for better compatibility)
-              pdfViewer.src = 'https://docs.google.com/viewer?url=' + encodeURIComponent(window.location.origin + '/report.pdf') + '&embedded=true';
-              pdfModal.classList.add('active');
-              document.body.style.overflow = 'hidden';
-            });
-          }
-
-          if (closePdfModal) {
-            closePdfModal.addEventListener('click', () => {
-              pdfModal.classList.remove('active');
-              pdfViewer.src = '';
-              document.body.style.overflow = 'auto';
-            });
-          }
-
-          // Close modal when clicking outside
-          if (pdfModal) {
-            pdfModal.addEventListener('click', (e) => {
-              if (e.target === pdfModal) {
-                pdfModal.classList.remove('active');
-                pdfViewer.src = '';
-                document.body.style.overflow = 'auto';
-              }
-            });
-          }
-
-          // Close modal with Escape key
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && pdfModal.classList.contains('active')) {
-              pdfModal.classList.remove('active');
-              pdfViewer.src = '';
-              document.body.style.overflow = 'auto';
-            }
-          });
-        }
-
         // --- START THE APP ---
         init();
-        setupPDFModal();
+        const scrollToReportBtn = document.getElementById('scrollToReportBtn');
+        const docViewerSection = document.getElementById('docViewer');
+        if (scrollToReportBtn && docViewerSection) {
+          scrollToReportBtn.addEventListener('click', () => {
+            docViewerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        }
       });
     </script>
-
-    <!-- PDF Viewer Modal -->
-    <div id="pdfModal" class="pdf-modal">
-      <div class="pdf-modal-content">
-        <div class="pdf-modal-header">
-          <h3 data-translate="Cryptocurrency Investment Strategy Research Report">加密货币投资策略研究报告</h3>
-          <button class="pdf-modal-close" id="closePdfModal">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-        <div class="pdf-modal-body">
-          <iframe id="pdfViewer" src="" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
+
