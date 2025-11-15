@@ -40,6 +40,8 @@
 
 Zentryx Pro is a cutting-edge cryptocurrency portfolio management platform designed for professional traders and investors. It combines real-time market data, advanced analytics, and AI-powered insights to help you make informed investment decisions.
 
+Website Entry: https://yiqingzhu-git.github.io/zentryx-pro-demo/
+
 ### What Makes Zentryx Pro Special?
 
 - 🤖 **AI-Powered Assistant** - GPT-4o-mini integration for intelligent portfolio analysis
@@ -513,7 +515,7 @@ The application gracefully degrades on older browsers:
 
 This project is proprietary software. All rights reserved.
 
-**Copyright © 2024 Zentryx Pro**
+**Copyright © 2025 Zentryx Pro**
 
 Unauthorized copying, modification, distribution, or use of this software is strictly prohibited.
 
